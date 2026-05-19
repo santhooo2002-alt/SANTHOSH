@@ -1,0 +1,376 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coffee Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f6f2ed;
+      color: #333;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Navbar */
+    header {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url('./Mask\ group\ \(1\).png');
+      background-size: cover;
+      background-position: center;
+      min-height: 90vh;
+      color: white;
+      position: relative;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 0;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #f5c7a9;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #f5c7a9;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background: #d89b73;
+      border: none;
+   
+      color: white;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #b67c58;
+    }
+
+    .hero {
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+
+    /* Coffee Cards */
+    .menu-section {
+      padding: 70px 0;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 32px;
+      margin-bottom: 50px;
+      color: #6f4e37;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+      text-align: left;
+    }
+
+    .card-content h3 {
+      color: #6f4e37;
+      margin-bottom: 10px;
+    }
+
+    .card-content p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      color: #6f4e37;
+    }
+
+    /* Brands */
+    .brands {
+      padding: 50px 0;
+      text-align: center;
+      background: #fff;
+    }
+
+    .brand-logos {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .brand-logos img {
+      width: 140px;
+      height: 100px;
+      object-fit: contain;
+      filter: grayscale(100%);
+      transition: 0.3s;
+    }
+
+    .brand-logos img:hover {
+      filter: grayscale(0%);
+    }
+
+    /* Footer */
+    footer {
+      background: #6f4e37;
+      color: white;
+      padding: 60px 0 20px;
+      margin-top: 50px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .footer-grid h3 {
+      margin-bottom: 15px;
+      color: #f5c7a9;
+    }
+
+    .footer-grid ul {
+      list-style: none;
+    }
+
+    .footer-grid ul li {
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #ddd;
+    }
+
+    .copyright {
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: 20px;
+      font-size: 14px;
+    }
+
+    @media(max-width:768px) {
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style></head>
+<body>  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Fittro</div><ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Explore Us</a></li>
+      <li><a href="#">Brands</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <button class="btn">Sign In</button>
+  </nav>
+
+  <div class="hero">
+    <h1>Power up with coffee</h1>
+    <p>Start your exciting day with a cup of Brew Coffee</p>
+    <button class="btn">Explore Us</button>
+  </div>
+</div>
+
+  </header>  <section class="menu-section container">
+    <h2 class="section-title">Explore the Coffee World</h2><div class="cards">
+
+  <div class="card">
+    <img src="./BG.jpg" alt="Cappuccino">
+    <div class="card-content">
+      <h3>Cappuccino</h3>
+      <p>Rich espresso blended with steamed milk and topped with foam.</p>
+      <div class="price-row">
+        <span class="price">$8.60</span>
+        <button class="btn">Order Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop" alt="Mocha">
+    <div class="card-content">
+      <h3>Mocha</h3>
+      <p>Chocolate flavored coffee with creamy texture and sweet aroma.</p>
+      <div class="price-row">
+        <span class="price">$9.20</span>
+        <button class="btn">Order Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1521302080371-df0e53d9c5b1?q=80&w=800&auto=format&fit=crop" alt="Latte">
+    <div class="card-content">
+      <h3>Latte</h3>
+      <p>Smooth milk coffee made with fresh espresso and creamy milk.</p>
+      <div class="price-row">
+        <span class="price">$11.40</span>
+        <button class="btn">Order Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1f0d5?q=80&w=800&auto=format&fit=crop" alt="Cold Java">
+    <div class="card-content">
+      <h3>Cold Java</h3>
+      <p>Refreshing cold coffee drink perfect for hot summer days.</p>
+      <div class="price-row">
+        <span class="price">$6.40</span>
+        <button class="btn">Order Now</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  </section>  <section class="brands">
+    <div class="container">
+      <h2 class="section-title">Brands We Work With</h2><div class="brand-logos">
+    <img src="https://upload.wikimedia.org/wikipedia/en/d/d3/Starbucks_Corporation_Logo_2011.svg" alt="Starbucks">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Nescaf%C3%A9-Logo.svg" alt="Nescafe">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Tim_Hortons_Logo.svg" alt="Tim Hortons">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Dunkin%27_Donuts_logo.svg" alt="Dunkin Donuts">
+  </div>
+</div>
+
+  </section>  <footer>
+    <div class="container">
+      <div class="footer-grid"><div>
+      <h3>Merchandise</h3>
+      <ul>
+        <li>T-Shirts</li>
+        <li>Caps</li>
+        <li>Masks</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Franchise</h3>
+      <ul>
+        <li>Coffee Outlet</li>
+        <li>Coffee Vending Machine</li>
+        <li>Contact Us</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>About Us</h3>
+      <ul>
+        <li>Promotions</li>
+        <li>Customer Care</li>
+        <li>Careers</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Follow Us</h3>
+      <ul>
+        <li>Instagram</li>
+        <li>Facebook</li>
+        <li>Twitter</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    © 2026 Fittro. All Rights Reserved.
+  </div>
+</div>
+
+  </footer></body>
+</html>
